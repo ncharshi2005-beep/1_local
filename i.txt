@@ -1,0 +1,40 @@
+1. Create and Navigate to Folder
+Create a directory for the experiment and move into it:
+mkdir Git_Lab_Experiment1
+cd Git_Lab_Experiment1
+2. Initialize the Repository
+Initialize a new Git repository, which creates the hidden .git tracking folder:
+git init
+3. List Files
+Verify the directory contents, including hidden files:Bashls -a
+4. Configure Git (First-Time Setup)
+Set your global username and email address:
+git config --global user.name "Your Name"
+git config --global user.email your_email@example.com
+5. Create a File
+Generate a README.txt file with content:Bashecho "This is my first Git experiment" > README.txt
+6. Check File Status
+View the state of the working directory and staging area to see untracked files:
+git status
+7. Add Files to Staging Area
+Mark the file to be included in the next commit:
+git add README.txt
+8. Commit the Files
+Save the changes permanently to the repository with a descriptive message:
+git commit -m "Initial commit"
+9. Modify and Update
+Modify the existing file and commit the new changes:
+echo "Git tracks file changes" >> README.txt
+git add README.txt
+git commit -m "Updated README file"
+10. View Commit History
+Show the history of all commits made in the repository:
+git log
+
+git remote add origin https://github.com/YourUsername/git-lab-demo.git
+4. Push Your Changes 
+
+Upload your local commits to the remote master branch:
+
+Bash
+git push -u origin master
