@@ -1,0 +1,90 @@
+1. Verify Installation
+Check if Maven is installed and configured correctly:
+
+Bash
+mvn --version
+2. Generate Project Structure
+Use the archetype plugin to create the project skeleton:
+
+Bash
+mvn archetype:generate
+Filter/Number: Press Enter (Default: 2309).
+
+Version: Press Enter (Default: 9).
+
+Define Properties:
+
+groupId: com.bnmit
+
+artifactId: sample-app
+
+version: 1.0-SNAPSHOT (Press Enter)
+
+package: com.bnmit (Press Enter)
+
+Confirm: Press Y and Enter.
+
+3. Explore the Directory
+Navigate to the newly created folder:
+
+Bash
+cd sample-app
+dir  # or 'ls' on Linux/Mac
+The standard structure includes src/main/java, src/test/java, and the pom.xml file.
+
+4. Build the Project
+Package the application into a JAR file:
+
+Bash
+mvn package
+
+
+5. Clean and Document
+
+Clean: Delete the target folder: mvn clean
+
+Site: Generate HTML documentation: mvn site (Open target/site/index.html in a browser).
+
+
+2. Navigate to the Source Directory
+You need to move into the directory where the Java code lives. Maven's standard directory structure is very specific:
+
+Bash
+cd sample-app/src/main/java/com/bnmit
+Delete the default App.java file.
+
+Create a new file named Calculator.java in this folder (sample-app/src/main/java/com/bnmit/).
+
+
+
+
+
+
+package com.bnmit;
+
+public class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public int subtract(int a, int b) {
+        return a - b;
+    }
+
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        int sum = calc.add(10, 5);
+        int diff = calc.subtract(10, 5);
+        
+        System.out.println("--- Maven Calculator Project ---");
+        System.out.println("Addition (10 + 5): " + sum);
+        System.out.println("Subtraction (10 - 5): " + diff);
+        System.out.println("Build Status: SUCCESS");
+    }
+}
+
+java -cp sample-app-1.0-SNAPSHOT.jar com.bnmit.Calculator cd target
+
+
+Outcome: A target folder is created containing sample-app-1.0-SNAPSHOT.jar.
+
