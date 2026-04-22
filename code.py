@@ -1,4 +1,4 @@
-def binary_search(arr, target):
+def binary_search(arr, target)://function
     low = 0
     high = len(arr) - 1
 
@@ -19,3 +19,4 @@ def binary_search(arr, target):
 my_list = [1, 3, 5, 7, 9]
 print(binary_search(my_list, 3)) # Output: 1
 print(binary_search(my_list, -1)) # Output: -1
+print("done")
