@@ -1,0 +1,15 @@
+1. Setup Git Global Configuration
+Set your identity for all projects on your machine:Bashgit config --global user.name "Your Name"
+git config --global user.email "your_email@example.com"
+2. Create a New Repository on GitHub Open https://github.com and sign in.Click New Repository.Name it git-lab-demo, keep it public, and click Create Repository.3. Clone the Repository Copy the HTTPS link from GitHub and run these commands in Git Bash:Bashcd Desktop
+git clone https://github.com/YourUsername/git-lab-demo.git
+cd git-lab-demo
+4. Add a Local File and Push Create a simple Python file and upload it to GitHub:Bash# Create the file
+echo 'print("This file is from local machine.")' > main.py
+
+# Stage, commit, and push
+git add main.py
+git commit -m "Add main.py file"
+git push origin master
+Note: If it is your first time pushing to a new repo, use git push -u origin master to set the upstream tracking.5. Demonstrate Fetch and Pull If changes are made directly on GitHub (e.g., editing README.md online), synchronize your local machine:Fetch: Download updates without changing your local files:Bashgit fetch origin
+Pull: Download and automatically update your local files:Bashgit pull origin master
