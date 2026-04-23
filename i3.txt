@@ -13,3 +13,27 @@ git commit -m "Add main.py file"
 git push origin master
 Note: If it is your first time pushing to a new repo, use git push -u origin master to set the upstream tracking.5. Demonstrate Fetch and Pull If changes are made directly on GitHub (e.g., editing README.md online), synchronize your local machine:Fetch: Download updates without changing your local files:Bashgit fetch origin
 Pull: Download and automatically update your local files:Bashgit pull origin master
+
+
+Aim:
+To understand remote repository management using GitHub by creating a GitHub repository and performing operations such as pushing local code, pulling updates from the remote repository, and cloning a repository.
+
+Theory:
+
+
+GitHub: A remote repository hosting platform that works with Git to enable distributed version control, collaboration, and synchronization.
+
+
+Remote (origin): The default name assigned to the remote GitHub repository URL.
+
+
+Key Operations: 
+
+
+Push: Transfers commits from the local repository to the remote GitHub repository.
+
+
+Pull: Fetches and merges changes from the remote repository into the local repository.
+
+
+Clone: Creates a local copy of an existing remote repository, including its entire history.
