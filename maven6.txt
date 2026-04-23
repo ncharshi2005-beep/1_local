@@ -88,3 +88,24 @@ java -cp sample-app-1.0-SNAPSHOT.jar com.bnmit.Calculator cd target
 
 Outcome: A target folder is created containing sample-app-1.0-SNAPSHOT.jar.
 
+
+
+Experiment 6: Creation and Build of a Java Project Using Apache Maven
+Aim:
+To understand the use of Apache Maven by creating a Java project using Maven archetypes, building the project using Maven build lifecycle commands, managing dependencies, and generating project documentation.
+
+Theory:
+
+Apache Maven: A build automation and project management tool for Java applications. It uses a Project Object Model (POM) defined in pom.xml.
+
+Maven Archetype: A template used to generate a standard project directory structure.
+
+GroupId & ArtifactId: groupId represents the organization (e.g., com.bnmit), and artifactId is the unique name of the application (e.g., sample-app).
+
+Build Lifecycle:
+
+mvn package: Compiles and packages code into a .jar file.
+
+mvn clean: Deletes the target directory (generated build files).
+
+mvn site: Generates project documentation and reports.
