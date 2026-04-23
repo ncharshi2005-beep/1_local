@@ -38,3 +38,25 @@ Upload your local commits to the remote master branch:
 
 Bash
 git push -u origin master
+
+
+
+Aim:
+To understand the basics of Git and learn how to create and manage a local Git repository by performing fundamental operations such as initializing a repository, adding files, committing changes, and viewing commit history.
+
+Theory:
+
+
+Git: A distributed version control system used to track changes in source code, allowing developers to maintain multiple versions and collaborate efficiently.
+
+
+Local Repository: A storage location on the user's machine containing project files and their complete change history.
+
+
+Workflow Stages: * Working Directory: Where files are created or modified.
+
+
+Staging Area (Index): Temporarily holds files marked for the next commit.
+
+
+Repository: Permanently stores snapshots of the project as commits.
