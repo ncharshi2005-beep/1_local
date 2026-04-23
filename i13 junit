@@ -1,0 +1,42 @@
+1. Lab ObjectiveAutomate JUnit test execution using Jenkins and publish test reports to achieve Continuous Integration (CI).2. Step-by-Step ImplementationStep 1: Create/Identify Maven Project 
+If you are starting fresh, generate the project:Bashmvn archetype:generate -DgroupId=com.devops.lab -DartifactId=lab13-junit -Dpackaging=jar -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+Step 2: Add JUnit & Surefire to pom.xml The Surefire plugin is the key here—it generates the XML reports that Jenkins reads.XML<dependencies>
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter</artifactId>
+        <version>5.10.0</version>
+        <scope>test</scope>
+    </dependency>
+</dependencies>
+
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.1.2</version>
+        </plugin>
+    </plugins>
+</build>
+Step 3: Java Class & Test (Standard Calculator) App: src/main/java/com/devops/lab/Calculator.java (Method: add(a, b)).Test: src/test/java/com/devops/lab/CalculatorTest.java (Method: testAdd()).Step 4: Push to Git Initialize your repo and push your code so Jenkins can access it.3. Jenkinsfile for Windows (No Versions)This pipeline uses the bat command for Windows and relies on your system's PATH.Groovypipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Build & Test') {
+            steps {
+                bat 'mvn clean test'
+            }
+        }
+    }
+    post {
+        always {
+            // This step enables the "Test Result" view in Jenkins
+            junit '**/target/surefire-reports/*.xml'
+        }
+    }
+}
+4. Viewing Reports in JenkinsOnce the build runs:Click on the Build Number in the left sidebar.Click "Test Result".You will see a breakdown of Total tests, Failures, and Execution time.5. Outcome: CI Quality GateIf you modify your test to fail (e.g., assertEquals(100, calculator.add(5,5))), Jenkins will mark the build as FAILED (Red). This demonstrates the Fail-fast principle where automated regression testing prevents broken code from moving forward.
